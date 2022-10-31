@@ -18,9 +18,9 @@ export const fetchApiArticles = () => {
   });
 };
 
-export const fetchApiArticlesByTopics = () => {
-  return myApi.get(`/`).then((res) => {
-    const returnArticles = res.data;
-    return returnArticles;
+export const fetchApiArticlesByTopics = (topic) => {
+  return myApi.get(`/articles?topic=${topic}`).then((res) => {
+    const returnArticlesByTopic = res.data;
+    return returnArticlesByTopic;
   });
 };
