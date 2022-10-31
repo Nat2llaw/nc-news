@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Articles from './components/Articles'
 import Header from './components/Header'
 import Home from './components/Home'
@@ -15,14 +15,20 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <Header />
-      <Nav />
-      <Users users={users} setUsers={setUsers} />
+        <Header />
+        <Nav />
+        <Users users={users} setUsers={setUsers} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/articles" element={<Articles />}></Route>
-          <Route path="/articles?topics=:topic" element={<Topics />}></Route>
-        </Routes>  
+          <Route
+            path="/articles"
+            element={<Articles />}
+          ></Route>
+          <Route
+            path="/articles/:topic"
+            element={<Topics topic={topic} />}
+          ></Route>
+        </Routes>
       </BrowserRouter>
     </>
   );

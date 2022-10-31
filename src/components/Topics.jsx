@@ -1,12 +1,11 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { fetchApiArticlesByTopics } from '../utils/Api'
 import TopicArticles from './TopicArticles'
 
 const Topics = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const topic = searchParams.get("topics")
+  const {topic} = useParams()
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
     
