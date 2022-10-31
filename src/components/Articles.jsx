@@ -19,7 +19,8 @@ const Articles = () => {
     return <p>Loading...</p>;
   } else {
     return (
-      <div>
+        <div>
+            <h1>All Articles</h1>
         <div className="allArticles">
           {articles.map((article) => {
             return <ArticleCard article={article} key={article.article_id} />;

@@ -17,3 +17,10 @@ export const fetchApiArticles = () => {
     return returnArticles;
   });
 };
+
+export const fetchApiArticlesByTopics = () => {
+  return myApi.get(`/`).then((res) => {
+    const returnArticles = res.data;
+    return returnArticles;
+  });
+};

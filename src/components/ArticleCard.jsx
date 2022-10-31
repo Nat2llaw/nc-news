@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ArticleCard = ({ article }) => {
-    console.log(article.article_id)
   return (
     <div className='articleContainer'>
       <p className='title'key={article.title}>{article.title}</p>
