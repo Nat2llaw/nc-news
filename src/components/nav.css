@@ -1,0 +1,13 @@
+.nav {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  float: left;
+  padding: 12px;
+  color: rgb(40, 86, 235);
+  text-decoration: none;
+  width: 33%;
+  text-align: center;
+}

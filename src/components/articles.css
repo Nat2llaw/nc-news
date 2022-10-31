@@ -1,0 +1,21 @@
+.allArticles {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.articleContainer {
+    width: auto;
+    border: solid red;
+    border-radius: 10px;
+    margin: 5px 5px 5px 5px;
+}
+.title {
+    color: orange;
+    font-size: 25px;
+}
+.topic {
+    color: green
+}
+p {
+    margin: 5px 5px 5px 5px;
+}
