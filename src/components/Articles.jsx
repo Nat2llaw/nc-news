@@ -4,6 +4,8 @@ import { fetchApiArticles } from "../utils/Api";
 import ArticleCard from "./ArticleCard";
 import "./articles.css"
 import SearchTopics from "./SearchTopics"
+import { Link } from "react-router-dom";
+import Topics from "./Topics";
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);

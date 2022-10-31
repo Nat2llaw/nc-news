@@ -1,28 +1,27 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { fetchApiArticlesByTopics } from '../utils/Api'
 import TopicArticles from './TopicArticles'
 
 const Topics = () => {
-  const {topic} = useParams()
+  const { selectedTopic } = useParams();
+  console.log(selectedTopic)
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
-    
-  useEffect(() => {
-      fetchApiArticlesByTopics(topic).then((res) => {
-          setArticles(res);
-          console.log(res)
+  
+    fetchApiArticlesByTopics(selectedTopic).then((res) => {
+      setArticles(res);
       setLoading(false);
     });
-  }, []);
-    
+
+      
     if (loading) {
         return <p>Loading...</p>;
     } else {
         return (
           <div>
-            <h2>Search Term Used: {topic}</h2>
+            <h2>Selected Topic: {selectedTopic}</h2>
             <div className="allArticlesByTopic">
               {articles.map((article) => {
                 return (
