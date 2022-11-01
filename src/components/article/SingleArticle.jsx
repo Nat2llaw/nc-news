@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 
 const SingleArticle = () => {
@@ -8,22 +8,20 @@ const SingleArticle = () => {
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchApiArticleId(id).then((res) => {
-      setArticle(res);
-      setLoading(false);
-    });
-  }, []);
+  fetchApiArticleId(id).then((res) => {
+    setArticle(res);
+    setLoading(false);
+  });
 
   if (loading) {
     return <p>Loading...</p>;
   } else {
     return (
       <div className="articleContainer">
-        <h1>{article.title}</h1>
-        <h2>Author: {article.author}</h2>
-        <h3>{article.created_at}</h3>
-        <h3>Topic: {article.topic}</h3>
+        <h2>{article.title}</h2>
+        <h3>Author: {article.author}</h3>
+        <h4>{article.created_at}</h4>
+        <h4>Topic: {article.topic}</h4>
         <p>{article.body}</p>
         <h2>Comments: {article.comment_count}</h2>
         <h2>Votes: {article.votes}</h2>
