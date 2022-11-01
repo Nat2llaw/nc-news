@@ -26,7 +26,7 @@ const App = () => {
             element={<Articles topic={topic} setTopic={setTopic} />}
           ></Route>
           <Route
-            path="/articles/:selectedtopic"
+            path="/articles/topic/:selectedtopic"
             element={<Topics topic={topic}/>}
           ></Route>
         </Routes>

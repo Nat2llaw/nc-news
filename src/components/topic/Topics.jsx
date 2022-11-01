@@ -6,7 +6,6 @@ import TopicArticles from './TopicArticles'
 
 const Topics = () => {
   const { selectedtopic } = useParams();
-  console.log(selectedtopic)
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
   

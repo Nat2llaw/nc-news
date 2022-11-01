@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { fetchApiTopics } from "../../utils/Api";
 import "./searchtopics.css"
 
-const SearchTopics = ({ topic, setTopic }) => {
+const SearchTopics = ({ setTopic }) => {
 
   const [allTopics, setAllTopics] = useState()
   const [loading, setLoading] = useState(true)
@@ -23,11 +23,11 @@ const SearchTopics = ({ topic, setTopic }) => {
       <ul>
         {allTopics.map((topic) => {
           return (
-            <Link to={topic.slug} onClick={() => {
+            <Link to={`/articles/topic/${topic.slug}`} onClick={() => {
               setTopic([topic.slug]);
             }}
               key={topic.slug}>
-              <li classname="topic">{topic.slug}</li>
+              <li className="topic">{topic.slug}</li>
             </Link>
           )
         })}
