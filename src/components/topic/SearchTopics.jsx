@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { fetchApiTopics } from "../../utils/Api";
 import "./searchtopics.css"
 
-const SearchTopics = ({ topic, setTopic }) => {
+const SearchTopics = ({ setTopic }) => {
 
   const [allTopics, setAllTopics] = useState()
   const [loading, setLoading] = useState(true)
