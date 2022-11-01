@@ -13,6 +13,7 @@
     border: solid red;
     border-radius: 10px;
     margin: 5px 5px 5px 5px;
+    text-align: center;
 }
 .title {
     color: orange;

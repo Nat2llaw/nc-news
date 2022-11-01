@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 import Votes from "./Votes";
 
@@ -9,12 +9,10 @@ const SingleArticle = () => {
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchApiArticleId(id).then((res) => {
-      setArticle(res);
-      setLoading(false);
-    });
-  }, []);
+  fetchApiArticleId(id).then((res) => {
+    setArticle(res);
+    setLoading(false);
+  });
 
   if (loading) {
     return <p>Loading...</p>;
