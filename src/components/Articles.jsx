@@ -3,11 +3,9 @@ import { useState, useEffect } from "react";
 import { fetchApiArticles } from "../utils/Api";
 import ArticleCard from "./ArticleCard";
 import "./articles.css"
-import SearchTopics from "./SearchTopics"
-import { Link } from "react-router-dom";
-import Topics from "./Topics";
+import SearchTopics from "./topic/SearchTopics"
 
-const Articles = () => {
+const Articles = ({topic, setTopic}) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +21,9 @@ const Articles = () => {
   } else {
     return (
       <div>
-        <SearchTopics />
+        <div className="searchtopics">
+          <SearchTopics />
+        </div>
         <h1>All Articles</h1>
         <div className="allArticles">
           {articles.map((article) => {

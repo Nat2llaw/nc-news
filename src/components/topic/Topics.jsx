@@ -1,16 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
-import { fetchApiArticlesByTopics } from '../utils/Api'
+import { fetchApiArticlesByTopics } from '../../utils/Api'
 import TopicArticles from './TopicArticles'
 
 const Topics = () => {
-  const { selectedTopic } = useParams();
-  console.log(selectedTopic)
+  const { selectedtopic } = useParams();
+  console.log(selectedtopic)
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
   
-    fetchApiArticlesByTopics(selectedTopic).then((res) => {
+    fetchApiArticlesByTopics(selectedtopic).then((res) => {
       setArticles(res);
       setLoading(false);
     });
@@ -21,7 +21,7 @@ const Topics = () => {
     } else {
         return (
           <div>
-            <h2>Selected Topic: {selectedTopic}</h2>
+            <h2>Selected Topic: {selectedtopic}</h2>
             <div className="allArticlesByTopic">
               {articles.map((article) => {
                 return (

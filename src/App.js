@@ -5,12 +5,13 @@ import Articles from './components/Articles'
 import Header from './components/Header'
 import Home from './components/Home'
 import Nav from './components/Nav'
-import TopicMain from './components/Topics'
+import Topics from './components/topic/Topics'
 import Users from './components/Users'
 
 
 const App = () => {
   const [users, setUsers] = useState(null);
+  const [topic, setTopic] = useState(null)
   
   return (
     <>
@@ -22,11 +23,11 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route
             path="/articles"
-            element={<Articles />}
+            element={<Articles topic={topic} setTopic={setTopic} />}
           ></Route>
           <Route
             path="/articles/:selectedtopic"
-            element={<TopicMain />}
+            element={<Topics topic={topic}/>}
           ></Route>
         </Routes>
       </BrowserRouter>

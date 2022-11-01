@@ -18,6 +18,13 @@ export const fetchApiArticles = () => {
   });
 };
 
+export const fetchApiTopics = () => {
+  return myApi.get(`/topics`).then((res) => {
+    const returnTopics = res.data;
+    return returnTopics;
+  });
+};
+
 export const fetchApiArticlesByTopics = (searchtopic) => {
   return myApi.get(`/articles?topic=${searchtopic}`).then((res) => {
     const returnArticlesByTopic = res.data;
