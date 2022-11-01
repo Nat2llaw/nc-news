@@ -24,8 +24,8 @@ const SingleArticle = () => {
         <h3>{article.created_at}</h3>
         <h3>Topic: {article.topic}</h3>
         <p>{article.body}</p>
+        <Votes votes={article.votes} />
         <h2>Comments: {article.comment_count}</h2>
-        <Votes />
       </div>
     );
   }
