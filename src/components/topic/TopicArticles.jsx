@@ -8,9 +8,9 @@ const TopicArticles = ({article}) => {
       <p className="title" key={article.title}>
         {article.title}
       </p>
-      <p className="id">
+      <Link className="id" to={`/articles/${article.article_id}`}>
         Article ID: {article.article_id}
-      </p>
+      </Link>
       <p className="topic" key={article.topic}>
         Topic: {article.topic}
       </p>
