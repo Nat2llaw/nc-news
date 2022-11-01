@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
+import Votes from "./Votes";
 
 const SingleArticle = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const SingleArticle = () => {
         <h3>Topic: {article.topic}</h3>
         <p>{article.body}</p>
         <h2>Comments: {article.comment_count}</h2>
-        <h2>Votes: {article.votes}</h2>
+        <Votes />
       </div>
     );
   }
