@@ -23,11 +23,11 @@ const SearchTopics = ({ topic, setTopic }) => {
       <ul>
         {allTopics.map((topic) => {
           return (
-            <Link to={topic.slug} onClick={() => {
+            <Link to={`/articles/topic/${topic.slug}`} onClick={() => {
               setTopic([topic.slug]);
             }}
               key={topic.slug}>
-              <li classname="topic">{topic.slug}</li>
+              <li className="topic">{topic.slug}</li>
             </Link>
           )
         })}

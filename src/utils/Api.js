@@ -31,3 +31,10 @@ export const fetchApiArticlesByTopics = (searchtopic) => {
     return returnArticlesByTopic;
   });
 };
+
+export const fetchApiArticleId = (id) => {
+  return myApi.get(`/articles/${id}`).then((res) => {
+    const returnTopics = res.data;
+    return returnTopics;
+  });
+};

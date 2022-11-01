@@ -8,6 +8,7 @@
 }
 
 .articleContainer {
+    display: grid;
     width: auto;
     border: solid red;
     border-radius: 10px;
@@ -20,6 +21,14 @@
 .topic {
     color: green
 }
+.id {
+    color: blue;
+    width: 94%;
+}
 p {
     margin: 5px 5px 5px 5px;
+}
+h3 {
+    text-align: center;
+    justify-self: center;
 }
