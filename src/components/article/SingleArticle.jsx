@@ -6,13 +6,11 @@ import Votes from "./Votes";
 
 const SingleArticle = () => {
   const { id } = useParams();
-  console.log(id);
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchApiArticleId(id).then((res) => {
-      console.log(res);
       setArticle(res);
       setLoading(false);
     });
