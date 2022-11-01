@@ -4,9 +4,8 @@ import { fetchApiArticles } from "../../utils/Api";
 import ArticleCard from "./ArticleCard";
 import "./articles.css"
 import SearchTopics from "../topic/SearchTopics"
-import { useParams } from "useparams";
 
-const Articles = ({ topic, setTopic }) => {
+const Articles = () => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
 
