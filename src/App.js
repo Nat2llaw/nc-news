@@ -36,10 +36,10 @@ const App = () => {
             path="/articles/:id/comments"
             element={<Comments users={users} />}
           ></Route>
-          {/* <Route
+          <Route
             path="/articles/sortby/:sort/order/:order"
             element={<Articles />}
-          ></Route> */}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

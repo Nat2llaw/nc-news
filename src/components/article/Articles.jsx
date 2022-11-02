@@ -4,7 +4,6 @@ import { fetchApiSortedArticles } from "../../utils/Api";
 import ArticleCard from "./ArticleCard";
 import "./articles.css";
 import SearchTopics from "../topic/SearchTopics";
-import { Link } from "react-router-dom";
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
