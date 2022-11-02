@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 import Votes from "./Votes";
-import Comments from "./Comments";
 
 const SingleArticle = () => {
   const { id } = useParams();

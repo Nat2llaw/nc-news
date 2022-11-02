@@ -19,7 +19,7 @@ const Votes = ({ votes }) => {
         console.log(res);
         setTotalVotes(res.article.votes);
       });  
-    }, [vote])
+    }, [vote, id])
   
   return (
     <>
