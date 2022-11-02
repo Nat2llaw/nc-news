@@ -1,5 +1,4 @@
 import React from 'react'
-import Articles from './Articles'
 import "./header.css"
 
 const Header = () => {

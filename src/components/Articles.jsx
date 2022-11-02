@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { fetchApiArticles } from "../utils/Api";
 import ArticleCard from "./ArticleCard";
 import "./articles.css"
+import SearchTopics from "./topic/SearchTopics"
 
-const Articles = () => {
+const Articles = ({topic, setTopic}) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -20,6 +21,10 @@ const Articles = () => {
   } else {
     return (
       <div>
+        <div className="searchtopics">
+          <SearchTopics />
+        </div>
+        <h1>All Articles</h1>
         <div className="allArticles">
           {articles.map((article) => {
             return <ArticleCard article={article} key={article.article_id} />;

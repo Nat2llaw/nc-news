@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { fetchApiUsers } from "../utils/Api";
-import { Link } from "react-router-dom";
+import "./users.css"
 
 const Users = (props) => {
   const { users, setUsers } = props;
