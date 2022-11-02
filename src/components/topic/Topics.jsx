@@ -14,7 +14,6 @@ const Topics = () => {
       setLoading(false);
     });
 
-      
     if (loading) {
         return <p>Loading...</p>;
     } else {
