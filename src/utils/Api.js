@@ -39,10 +39,10 @@ export const fetchApiArticleId = (id) => {
   });
 };
 
-export const changeApiArticleVotes = (id, vote) => {
-  console.log(id, vote, "api here")
-  return myApi.patch(`/articles/${id}`, {inc_votes: vote}).then((res) => {
+export const  changeApiArticleVotes = (id, vote) => {
+  console.log(id, vote, "api here");
+  return myApi.patch(`/articles/${id}`, { inc_votes: vote }).then((res) => {
     const returnNewVote = res.data;
     return returnNewVote;
-  })
-}
+  });
+};

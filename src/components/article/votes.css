@@ -1,0 +1,14 @@
+.voteContainer {
+    margin-top: 25px;
+}
+
+.voteBox {
+    border-radius: 10px;
+    border-color: rgba(165, 17, 17, 0.4);
+}
+
+.voteTitle {
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+}
