@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Articles from './components/Articles'
+import Articles from './components/article/Articles'
+import SingleArticle from './components/article/SingleArticle'
 import Header from './components/Header'
 import Home from './components/Home'
 import Nav from './components/Nav'
@@ -27,8 +28,9 @@ const App = () => {
           ></Route>
           <Route
             path="/articles/topic/:selectedtopic"
-            element={<Topics topic={topic}/>}
+            element={<Topics />}
           ></Route>
+          <Route path="/articles/:id" element={<SingleArticle />}></Route>
         </Routes>
       </BrowserRouter>
     </>
