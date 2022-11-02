@@ -52,3 +52,10 @@ export const fetchApiArticleComments = (id) => {
     return returnArticleComments;
   });
 };
+
+export const AddApiArticleComment = (id, body) => {
+  return myApi.post(`/articles/${id}/comments`, body).then((res) => {
+    const addArticleComment = res.data;
+    return addArticleComment;
+  });
+};
