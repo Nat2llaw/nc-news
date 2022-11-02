@@ -40,9 +40,15 @@ export const fetchApiArticleId = (id) => {
 };
 
 export const  changeApiArticleVotes = (id, vote) => {
-  console.log(id, vote, "api here");
   return myApi.patch(`/articles/${id}`, { inc_votes: vote }).then((res) => {
     const returnNewVote = res.data;
     return returnNewVote;
+  });
+};
+
+export const fetchApiArticleComments = (id) => {
+  return myApi.get(`/articles/${id}/comments`).then((res) => {
+    const returnArticleComments = res.data;
+    return returnArticleComments;
   });
 };
