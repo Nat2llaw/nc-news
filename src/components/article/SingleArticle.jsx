@@ -20,8 +20,8 @@ const SingleArticle = () => {
       <div className="articleContainer">
         <h2>{article.title}</h2>
         <h3>Author: {article.author}</h3>
-        <h4>{article.created_at}</h4>
-        <h4>Topic: {article.topic}</h4>
+        <h3>{article.created_at}</h3>
+        <h3>Topic: {article.topic}</h3>
         <p>{article.body}</p>
         <h2>Comments: {article.comment_count}</h2>
         <h2>Votes: {article.votes}</h2>
