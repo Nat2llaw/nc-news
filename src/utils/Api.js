@@ -54,9 +54,15 @@ export const fetchApiArticleComments = (id) => {
 };
 
 export const addApiArticleComment = (id, body) => {
-  console.log(id, body, "hello")
   return myApi.post(`/articles/${id}/comments`, body).then((res) => {
     const addArticleComment = res.data;
     return addArticleComment;
+  });
+};
+
+export const fetchApiSortedArticles = (sort, order) => {
+  return myApi.get(`/articles?sort_by=${sort}&order=${order}`).then((res) => {
+    const sortedArticle = res.data;
+    return sortedArticle;
   });
 };

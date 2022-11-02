@@ -1,39 +1,65 @@
 .searchtopics {
-    display: grid;
+  display: grid;
 }
 
+.fliterArticles {
+  display: grid;
+}
+
+.sort {
+  display: grid;
+  margin: 5px 5px 5px 5px;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+}
+.inputs {
+  margin: 10px 10px 10px 10px;
+}
+.field {
+  font-weight: bold;
+  font-size: 15px;
+}
+.btn {
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+}
 .allArticles {
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .articleContainer {
-    display: grid;
-    width: auto;
-    border: solid red;
-    border-radius: 10px;
-    margin: 5px 5px 5px 5px;
-    text-align: center;
+  display: grid;
+  width: auto;
+  border: solid red;
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+  text-align: center;
 }
 .title {
-    color: orange;
-    font-size: 25px;
+  color: orange;
+  font-weight: bolder;
+  font-size: 25px;
 }
 .topic {
-    color: green
+  color: rgb(221, 28, 221);
+  font-size: 20px;
+  font-weight: bold;
 }
 .id {
-    color: blue;
-    width: 94%;
+  color: blue;
+  justify-self: center;
 }
 p {
-    margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
 }
 h3 {
-    text-align: center;
-    justify-self: center;
+  text-align: center;
+  justify-self: center;
 }
 .commentsLink {
-    text-align: center;
-    justify-self: center;
+  text-align: center;
+  justify-self: center;
 }

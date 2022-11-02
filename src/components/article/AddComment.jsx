@@ -19,7 +19,7 @@ const AddComment = ({ users }) => {
     addApiArticleComment(id, {username:users[0].username, body:body}).then((res) => {
         return <p>{message}</p>
     });
-  }, [id, body]);
+  }, [id, body, message, users]);
 
   return (
     <div className="addcommentContainer">
