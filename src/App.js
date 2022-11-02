@@ -32,7 +32,7 @@ const App = () => {
             element={<Topics topic={topic} />}
           ></Route>
           <Route path="/articles/:id" element={<SingleArticle />}></Route>
-          <Route path="/articles/:id/comments" element={<Comments users={users} />}></Route>
+          <Route path="/articles/:id/comments" element={<Comments />}></Route>
         </Routes>
       </BrowserRouter>
     </>

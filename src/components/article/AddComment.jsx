@@ -1,25 +1,31 @@
-import React from 'react'
-import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import { addApiArticleComment } from '../../utils/Api';
-const AddComment = ({ users }) => {
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { addApiArticleComment } from "../../utils/Api";
+const AddComment = ({ user }) => {
   const { id } = useParams();
-  //user adds text
-  //auto add votes=0 article id and date created comment_id
-    const [body, setBody] = useState("");
-    const [message, setMessage] = useState("");
+  const [body, setBody] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(null);
 
   const addComment = (event) => {
     event.preventDefault();
     const newComment = event.target.input.value;
-      setBody(newComment);
-      setMessage("Comment Posted")
+    setBody(newComment);
+    setMessage("Comment Posted");
+
+    addApiArticleComment(id, { username: user, body: body })
+      .then((res) => {
+        return <p>{message}</p>;
+      })
+      .catch((error) => {
+        setStatus(error.response.status);
+      });
   };
-  useEffect(() => {
-    addApiArticleComment(id, {username:users[0].username, body:body}).then((res) => {
-        return <p>{message}</p>
-    });
-  }, [id, body]);
+
+  if (status === 400) return <h2>400: bad request</h2>;
+  if (status === 403) return <h2>403: Forbidden</h2>;
+  if (status === 404) return <h2>404: Not found</h2>;
 
   return (
     <div className="addcommentContainer">
@@ -30,7 +36,7 @@ const AddComment = ({ users }) => {
             <label htmlFor="input" className="field">
               input comment:
             </label>
-            <input name="input" type="text" />
+            <input name="input" type="text" placeholder="type here" />
             <button className="submit" type="submit">
               add comment
             </button>
@@ -39,6 +45,6 @@ const AddComment = ({ users }) => {
       </form>
     </div>
   );
-}
+};
 
-export default AddComment
+export default AddComment;
