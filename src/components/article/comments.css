@@ -1,0 +1,28 @@
+.commentContainer {
+  display: grid;
+  border: red solid;
+  border-radius: 10px;
+  margin: 5px 5px 5px 5px;
+}
+.author {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 5px 10px 5px 10px;
+}
+.article_id {
+  text-align: center;
+  justify-self: center;
+}
+.votes {
+    text-align: left;
+    justify-self: center;
+}
+.body {
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+}

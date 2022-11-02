@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 import Votes from "./Votes";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const { id } = useParams();
@@ -25,7 +26,9 @@ const SingleArticle = () => {
         <h3>Topic: {article.topic}</h3>
         <p>{article.body}</p>
         <Votes votes={article.votes} />
-        <h2>Comments: {article.comment_count}</h2>
+        <Link className="commentsLink" to={`/articles/${id}/comments`}>
+          <h2>Click Me To See All Comments</h2>
+        </Link>
       </div>
     );
   }

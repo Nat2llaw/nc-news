@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Articles from './components/article/Articles'
+import Comments from './components/article/Comments'
 import SingleArticle from './components/article/SingleArticle'
 import Header from './components/Header'
 import Home from './components/Home'
@@ -31,6 +32,7 @@ const App = () => {
             element={<Topics topic={topic} />}
           ></Route>
           <Route path="/articles/:id" element={<SingleArticle />}></Route>
+          <Route path="/articles/:id/comments" element={<Comments />}></Route>
         </Routes>
       </BrowserRouter>
     </>
