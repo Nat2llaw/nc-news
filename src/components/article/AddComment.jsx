@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { addApiArticleComment } from '../../utils/Api';
 const AddComment = ({ users }) => {
   const { id } = useParams();
-  //user adds text
-  //auto add votes=0 article id and date created comment_id
     const [body, setBody] = useState("");
     const [message, setMessage] = useState("");
 

@@ -33,9 +33,9 @@ const Articles = () => {
       });
     }, [sortby, orderby]);
 
-    if (status === 400) return <p>400: Bad request</p>;
-    if (status === 403) return <p>403: Forbidden</p>;
-    if (status === 404) return <p>404: Not found</p>;
+    if (status === 400) return <h2>400: Bad request</h2>;
+    if (status === 403) return <h2>403: Forbidden</h2>;
+    if (status === 404) return <h2>404: Not found</h2>;
 
     if (loading) {
       return <p>Loading...</p>;
