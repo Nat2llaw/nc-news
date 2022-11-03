@@ -13,7 +13,6 @@ import Users from './components/Users'
 
 const App = () => {
   const [users, setUsers] = useState(null);
-  const [topic, setTopic] = useState(null)
   
   return (
     <>
