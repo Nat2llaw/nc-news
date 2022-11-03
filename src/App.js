@@ -38,7 +38,7 @@ const App = () => {
             element={<Articles />}
           ></Route>
           <Route
-            path="/articles/:article_id/comments/:comment_id"
+            path="/articles/:article_id/comments"
             element={<DeleteComment />}
           ></Route>
         </Routes>

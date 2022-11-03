@@ -11,7 +11,7 @@
 }
 .info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin: 5px 10px 5px 10px;
 }
 .article_id {

@@ -18,8 +18,6 @@ const Articles = () => {
     event.preventDefault();
     setSortBy(event.target.sorting.value || "created_at");
     setOrderBy(event.target.ordering.value);
-    console.log(sortby)
-    
     };
 
     useEffect(() => {
