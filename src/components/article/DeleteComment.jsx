@@ -4,17 +4,15 @@ import { deleteApiArticlesComment } from "../../utils/Api";
 const DeleteComment = ({ user, comment_id, author }) => {
   const deleteComment = (event) => {
     event.preventDefault();
-    console.log(comment_id);
-    console.log(author)
-    
 
     if (author === user) {
       let q = window.confirm("Delete?")
       if (q === true) {
         deleteApiArticlesComment(comment_id)
-        window.alert("comment deleted")
+          .then(() => {
+          window.alert("comment deleted")
+        })
         .catch((error) => {
-          console.log(error);
         });
       } else {
         window.alert("delete cancelled");
