@@ -1,23 +1,38 @@
-import React from 'react'
-import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import { addApiArticleComment } from '../../utils/Api';
-const AddComment = ({ users }) => {
+import React from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { addApiArticleComment } from "../../utils/Api";
+const AddComment = ({ user, setComments }) => {
   const { id } = useParams();
-    const [body, setBody] = useState("");
-    const [message, setMessage] = useState("");
+  const [newComment, setNewComment] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(null);
 
   const addComment = (event) => {
     event.preventDefault();
-    const newComment = event.target.input.value;
-      setBody(newComment);
-      setMessage("Comment Posted")
-  };
-  useEffect(() => {
-    addApiArticleComment(id, {username:users[0].username, body:body}).then((res) => {
-        return <p>{message}</p>
+    const newInputComment = { username: user, body: newComment };
+    setMessage("Comment Posted");
+
+    addApiArticleComment(id, newInputComment).catch((error) => {
+      setStatus(error.response.status);
     });
-  }, [id, body, message, users]);
+  };
+
+  const handleChange = (event) => {
+    setNewComment(event.target.value);
+  };
+
+  if (status === 400)
+    return (
+      <h2>
+        400: bad request, no comment input
+        <br />
+        <br />
+        Refresh Page to try again
+      </h2>
+    );
+  if (status === 403) return <h2>403: Forbidden</h2>;
+  if (status === 404) return <h2>404: Not found</h2>;
 
   return (
     <div className="addcommentContainer">
@@ -28,7 +43,12 @@ const AddComment = ({ users }) => {
             <label htmlFor="input" className="field">
               input comment:
             </label>
-            <input name="input" type="text" />
+            <input
+              name="input"
+              type="text"
+              placeholder="type here"
+              onChange={handleChange}
+            />
             <button className="submit" type="submit">
               add comment
             </button>
@@ -37,6 +57,6 @@ const AddComment = ({ users }) => {
       </form>
     </div>
   );
-}
+};
 
-export default AddComment
+export default AddComment;
