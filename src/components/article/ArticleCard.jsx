@@ -5,7 +5,7 @@ const ArticleCard = ({ article }) => {
   return (
     <>
       <div className="articleContainer">
-        <p className="title" key={article.title}>
+        <p className="title" key={article.article_id}>
           {article.title}
         </p>
         <p className="date">{article.created_at}</p>

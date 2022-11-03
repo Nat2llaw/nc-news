@@ -21,7 +21,7 @@ const SingleArticle = () => {
       <div className="articleContainer">
         <h2>{article.title}</h2>
         <h3>Author: {article.author}</h3>
-        <h3>{article.created_at}</h3>
+        <h3>{new Date(article.created_at).toString()}</h3>
         <h3>Topic: {article.topic}</h3>
         <p>{article.body}</p>
         <Votes votes={article.votes} />

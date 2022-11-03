@@ -10,10 +10,12 @@ const AddComment = ({ user, setComments }) => {
 
   const addComment = (event) => {
     event.preventDefault();
+    
     const newInputComment = { username: user, body: newComment };
     setMessage("Comment Posted");
 
-    addApiArticleComment(id, newInputComment).catch((error) => {
+    addApiArticleComment(id, newInputComment)
+      .catch((error) => {
       setStatus(error.response.status);
     });
   };
@@ -31,6 +33,7 @@ const AddComment = ({ user, setComments }) => {
         Refresh Page to try again
       </h2>
     );
+
   if (status === 403) return <h2>403: Forbidden</h2>;
   if (status === 404) return <h2>404: Not found</h2>;
 

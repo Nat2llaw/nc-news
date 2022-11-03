@@ -29,7 +29,7 @@ const App = () => {
           ></Route>
           <Route
             path="/articles/topic/:selectedtopic"
-            element={<Topics topic={topic} />}
+            element={<Topics />}
           ></Route>
           <Route path="/articles/:id" element={<SingleArticle />}></Route>
           <Route
@@ -40,6 +40,7 @@ const App = () => {
             path="/articles/sortby/:sort/order/:order"
             element={<Articles />}
           ></Route>
+
         </Routes>
       </BrowserRouter>
     </>
