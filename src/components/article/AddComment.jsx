@@ -23,7 +23,14 @@ const AddComment = ({ user }) => {
       });
   };
 
-  if (status === 400) return <h2>400: bad request</h2>;
+  if (status === 400) return (
+    <h2>
+      400: bad request, no comment input
+      <br />
+      <br />
+      Refresh Page to try again
+    </h2>
+  );
   if (status === 403) return <h2>403: Forbidden</h2>;
   if (status === 404) return <h2>404: Not found</h2>;
 
