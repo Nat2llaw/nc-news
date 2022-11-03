@@ -5,7 +5,7 @@ const myApi = axios.create({
 });
 
 export const fetchApiUsers = () => {
-    return myApi.get(`/users`).then((res) => {
+  return myApi.get(`/users`).then((res) => {
     const returnUsers = res.data;
     return returnUsers;
   });
@@ -39,7 +39,7 @@ export const fetchApiArticleId = (id) => {
   });
 };
 
-export const  changeApiArticleVotes = (id, vote) => {
+export const changeApiArticleVotes = (id, vote) => {
   return myApi.patch(`/articles/${id}`, { inc_votes: vote }).then((res) => {
     const returnNewVote = res.data;
     return returnNewVote;
@@ -50,5 +50,12 @@ export const fetchApiArticleComments = (id) => {
   return myApi.get(`/articles/${id}/comments`).then((res) => {
     const returnArticleComments = res.data;
     return returnArticleComments;
+  });
+};
+
+export const addApiArticleComment = (id, body) => {
+  return myApi.post(`/articles/${id}/comments`, body).then((res) => {
+    const addArticleComment = res.data;
+    return addArticleComment;
   });
 };

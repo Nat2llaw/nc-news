@@ -16,7 +16,6 @@ const Votes = ({ votes }) => {
   };
     useEffect(() => {
       changeApiArticleVotes(id, vote).then((res) => {
-        console.log(res);
         setTotalVotes(res.article.votes);
       });  
     }, [vote, id])

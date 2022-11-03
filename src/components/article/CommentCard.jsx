@@ -10,8 +10,11 @@ const CommentCard = ({ comment }) => {
         <div className="info"><Link className="article_id" to={`/articles/${comment.article_id}`}>
           Article ID: {comment.article_id}
         </Link>
-        <p className="votes">Votes: {comment.votes}</p>
-        <p className="createdAt">Date Created: {comment.created_at}</p></div>
+          <p className="votes">Votes: {comment.votes}</p>
+        </div>
+          <p className="createdAt">
+            Date Created: {new Date(comment.created_at).toString()}
+          </p>
         <p className="body">{comment.body}</p>
       </div>
     </>
