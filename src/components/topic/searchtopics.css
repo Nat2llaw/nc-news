@@ -1,6 +1,8 @@
 ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 40px;
+    justify-items: center;
 }
 li {
     display: grid;

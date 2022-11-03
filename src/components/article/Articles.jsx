@@ -19,7 +19,7 @@ const Articles = () => {
     setSortBy(event.target.sorting.value || "created_at");
     setOrderBy(event.target.ordering.value);
     };
-
+    
     useEffect(() => {
       fetchApiSortedArticles(sortby, orderby).then((res) => {
         setArticles(res);
@@ -29,7 +29,7 @@ const Articles = () => {
         .catch((error) => {
         setStatus(error.request.status)
       });
-    }, [sortby, orderby]);
+    }, [sortby, orderby, navigate]);
 
     if (status === 400) return <h2>400: Bad request</h2>;
     if (status === 403) return <h2>403: Forbidden</h2>;

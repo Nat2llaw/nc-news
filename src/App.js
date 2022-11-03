@@ -41,6 +41,10 @@ const App = () => {
             path="/articles/:article_id/comments"
             element={<DeleteComment />}
           ></Route>
+          <Route
+            path="/articles/topic/:selectedtopic/sortby/:sort/order/:order"
+            element={<Topics />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

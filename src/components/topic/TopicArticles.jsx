@@ -14,6 +14,12 @@ const TopicArticles = ({article}) => {
       <p className="topic" key={article.topic}>
         Topic: {article.topic}
       </p>
+      <p className="boby">
+        {article.body}
+      </p>
+      <p className="date">
+        {new Date(article.created_at).toString()}
+      </p>
     </div>
   );
 }
