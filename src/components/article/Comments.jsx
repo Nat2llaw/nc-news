@@ -29,7 +29,7 @@ const Comments = () => {
       <div>
         <div className="comments"></div>
         <h1>All Comments</h1>
-        <AddComment user={user} />
+        <AddComment user={user} setComments={setComments} />
         <div className="allComments">
           {comments.map((comment) => {
             return <CommentCard comment={comment} key={comment.comment_id} />;

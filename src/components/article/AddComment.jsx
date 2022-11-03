@@ -2,26 +2,26 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { addApiArticleComment } from "../../utils/Api";
-const AddComment = ({ user }) => {
+const AddComment = ({ user, setComments }) => {
   const { id } = useParams();
-  const [body, setBody] = useState("");
+  const [newComment, setNewComment] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(null);
 
   const addComment = (event) => {
     event.preventDefault();
-    const newComment = event.target.input.value;
-    setBody(newComment);
+    const newInputComment = {username: user, body: newComment}
     setMessage("Comment Posted");
 
-    addApiArticleComment(id, { username: user, body: body })
-      .then((res) => {
-        return <p>{message}</p>;
-      })
+    addApiArticleComment(id, newInputComment)
       .catch((error) => {
         setStatus(error.response.status);
       });
   };
+
+  const handleChange = (event) => {
+    setNewComment(event.target.value)
+  }
 
   if (status === 400) return (
     <h2>
@@ -43,7 +43,7 @@ const AddComment = ({ user }) => {
             <label htmlFor="input" className="field">
               input comment:
             </label>
-            <input name="input" type="text" placeholder="type here" />
+            <input name="input" type="text" placeholder="type here" onChange={handleChange}/>
             <button className="submit" type="submit">
               add comment
             </button>
