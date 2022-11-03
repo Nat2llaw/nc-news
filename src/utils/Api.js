@@ -66,3 +66,10 @@ export const fetchApiSortedArticles = (sort, order) => {
     return sortedArticle;
   });
 };
+
+export const deleteApiArticlesComment = (comment_id) => {
+  return myApi.delete(`/comments/${comment_id}`).then((res) => {
+    const remainingComments = res.data;
+    return remainingComments;
+  });
+};

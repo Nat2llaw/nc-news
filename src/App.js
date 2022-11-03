@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Articles from './components/article/Articles'
 import Comments from './components/article/Comments'
+import DeleteComment from './components/article/DeleteComment'
 import SingleArticle from './components/article/SingleArticle'
 import Header from './components/Header'
 import Home from './components/Home'
@@ -13,7 +14,6 @@ import Users from './components/Users'
 
 const App = () => {
   const [users, setUsers] = useState(null);
-  const [topic, setTopic] = useState(null)
   
   return (
     <>
@@ -23,13 +23,10 @@ const App = () => {
         <Users users={users} setUsers={setUsers} />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/articles"
-            element={<Articles />}
-          ></Route>
+          <Route path="/articles" element={<Articles />}></Route>
           <Route
             path="/articles/topic/:selectedtopic"
-            element={<Topics topic={topic} />}
+            element={<Topics />}
           ></Route>
           <Route path="/articles/:id" element={<SingleArticle />}></Route>
           <Route
@@ -39,6 +36,10 @@ const App = () => {
           <Route
             path="/articles/sortby/:sort/order/:order"
             element={<Articles />}
+          ></Route>
+          <Route
+            path="/articles/:article_id/comments/:comment_id"
+            element={<DeleteComment />}
           ></Route>
         </Routes>
       </BrowserRouter>
