@@ -59,3 +59,10 @@ export const addApiArticleComment = (id, body) => {
     return addArticleComment;
   });
 };
+
+export const fetchApiSortedArticles = (sort, order) => {
+  return myApi.get(`/articles?sort_by=${sort}&order=${order}`).then((res) => {
+    const sortedArticle = res.data;
+    return sortedArticle;
+  });
+};

@@ -25,14 +25,22 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route
             path="/articles"
-            element={<Articles topic={topic} setTopic={setTopic} />}
+            element={<Articles />}
           ></Route>
           <Route
             path="/articles/topic/:selectedtopic"
             element={<Topics />}
           ></Route>
           <Route path="/articles/:id" element={<SingleArticle />}></Route>
-          <Route path="/articles/:id/comments" element={<Comments />}></Route>
+          <Route
+            path="/articles/:id/comments"
+            element={<Comments users={users} />}
+          ></Route>
+          <Route
+            path="/articles/sortby/:sort/order/:order"
+            element={<Articles />}
+          ></Route>
+
         </Routes>
       </BrowserRouter>
     </>

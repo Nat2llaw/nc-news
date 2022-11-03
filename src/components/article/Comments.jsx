@@ -9,18 +9,16 @@ const Comments = () => {
   const { id } = useParams();
   const [comments, setComments] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null)
-  
-  fetchApiUsers()
-    .then((res) => {
-      setUser(res[0].username)
-    })
+  const [user, setUser] = useState(null);
 
-  fetchApiArticleComments(id)
-    .then((res) => {
-      setComments(res);
-      setLoading(false);
-    })
+  fetchApiUsers().then((res) => {
+    setUser(res[0].username);
+  });
+
+  fetchApiArticleComments(id).then((res) => {
+    setComments(res);
+    setLoading(false);
+  });
 
   if (loading) {
     return <p>Loading...</p>;

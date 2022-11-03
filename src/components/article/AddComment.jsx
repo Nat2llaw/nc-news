@@ -10,27 +10,30 @@ const AddComment = ({ user, setComments }) => {
 
   const addComment = (event) => {
     event.preventDefault();
-    const newInputComment = {username: user, body: newComment}
+    
+    const newInputComment = { username: user, body: newComment };
     setMessage("Comment Posted");
 
     addApiArticleComment(id, newInputComment)
       .catch((error) => {
-        setStatus(error.response.status);
-      });
+      setStatus(error.response.status);
+    });
   };
 
   const handleChange = (event) => {
-    setNewComment(event.target.value)
-  }
+    setNewComment(event.target.value);
+  };
 
-  if (status === 400) return (
-    <h2>
-      400: bad request, no comment input
-      <br />
-      <br />
-      Refresh Page to try again
-    </h2>
-  );
+  if (status === 400)
+    return (
+      <h2>
+        400: bad request, no comment input
+        <br />
+        <br />
+        Refresh Page to try again
+      </h2>
+    );
+
   if (status === 403) return <h2>403: Forbidden</h2>;
   if (status === 404) return <h2>404: Not found</h2>;
 
@@ -43,7 +46,12 @@ const AddComment = ({ user, setComments }) => {
             <label htmlFor="input" className="field">
               input comment:
             </label>
-            <input name="input" type="text" placeholder="type here" onChange={handleChange}/>
+            <input
+              name="input"
+              type="text"
+              placeholder="type here"
+              onChange={handleChange}
+            />
             <button className="submit" type="submit">
               add comment
             </button>
