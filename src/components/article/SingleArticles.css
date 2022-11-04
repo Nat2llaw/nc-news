@@ -1,0 +1,33 @@
+.singlearticleContainer {
+  display: grid;
+  width: auto;
+  border: solid rgb(247, 247, 247);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(245, 245, 245);
+  margin: 5px 5px;
+  text-align: center;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+}
+.articleTitle {
+  color: blue;
+  font-size: 30px;
+}
+.baseInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 12px;
+}
+
+.articleBody {
+    font-size: 20px;
+    text-align: justify;
+    margin: 5px 20px;
+}
+.articleComments {
+    color: green;
+    border: solid rgb(238, 255, 238);
+    border-radius: 10px;
+    box-shadow: 5px 5px rgb(238, 255, 238);
+}

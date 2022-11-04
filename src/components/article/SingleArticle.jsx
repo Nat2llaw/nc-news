@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 import Votes from "./Votes";
+import "./SingleArticles.css"
 
 const SingleArticle = () => {
   const { id } = useParams();
