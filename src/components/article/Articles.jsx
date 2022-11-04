@@ -4,7 +4,6 @@ import { fetchApiSortedArticles } from "../../utils/Api";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import "./articles.css";
-import SearchTopics from "../topic/SearchTopics";
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
@@ -19,7 +18,7 @@ const Articles = () => {
     setSortBy(event.target.sorting.value || "created_at");
     setOrderBy(event.target.ordering.value);
     };
-
+    
     useEffect(() => {
       fetchApiSortedArticles(sortby, orderby).then((res) => {
         setArticles(res);
@@ -40,9 +39,6 @@ const Articles = () => {
     } else {
       return (
         <div>
-          <div className="searchtopics">
-            <SearchTopics />
-          </div>
           <div className="filterArticles">
             <form className="sort" onSubmit={handleQueries}>
               <fieldset>
@@ -69,7 +65,6 @@ const Articles = () => {
               </fieldset>
             </form>
           </div>
-          <h1>All Articles</h1>
           <div className="allArticles">
             {articles.map((article) => {
               return <ArticleCard article={article} key={article.article_id} />;

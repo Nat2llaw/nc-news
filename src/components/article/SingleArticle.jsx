@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { fetchApiArticleId } from "../../utils/Api";
 import Votes from "./Votes";
 
@@ -8,11 +8,22 @@ const SingleArticle = () => {
   const { id } = useParams();
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [status, setStatus] = useState("")
 
-  fetchApiArticleId(id).then((res) => {
-    setArticle(res);
-    setLoading(false);
-  });
+  useEffect(() => {
+    fetchApiArticleId(id)
+      .then((res) => {
+        setArticle(res);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setStatus(error.response.status)
+      })
+  }, [id]);
+  
+  if (status === 400) return <h2>400: Bad request</h2>;
+  if (status === 403) return <h2>403: Forbidden</h2>;
+  if (status === 404) return <h2>404: Not found</h2>;
 
   if (loading) {
     return <p>Loading...</p>;

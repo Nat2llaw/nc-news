@@ -25,6 +25,11 @@
   justify-content: center;
   align-items: center;
 }
+.allArticles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .articleContainer {
   display: grid;
   width: auto;
@@ -47,11 +52,10 @@
 .id {
   color: blue;
   justify-self: center;
-  margin: 5px 5px 5px 5px;
 }
-.vc {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.date {
+  color:rgb(1, 153, 235);
+  text-align: center;
 }
 p {
   margin: 5px 5px 5px 5px;
@@ -63,4 +67,17 @@ h3 {
 .commentsLink {
   text-align: center;
   justify-self: center;
+}
+
+/*============= MEDIA QUERIES ================*/
+@media screen and (max-width: 1024px) {
+    .allArticles {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .allArticles {
+        grid-template-columns: 1fr;
+    }
 }

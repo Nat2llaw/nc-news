@@ -67,6 +67,13 @@ export const fetchApiSortedArticles = (sort, order) => {
   });
 };
 
+export const fetchApiSortedArticlesByTopic = (topic, sort, order) => {
+  return myApi.get(`/articles?topic=${topic}&sort_by=${sort}&order=${order}`).then((res) => {
+    const sortedArticleByTopic = res.data;
+    return sortedArticleByTopic;
+  });
+};
+
 export const deleteApiArticlesComment = (comment_id) => {
   return myApi.delete(`/comments/${comment_id}`).then((res) => {
     const remainingComments = res.data;

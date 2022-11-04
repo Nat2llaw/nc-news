@@ -6,19 +6,18 @@ const DeleteComment = ({ user, comment_id, author }) => {
     event.preventDefault();
 
     if (author === user) {
-      let q = window.confirm("Delete?")
+      let q = window.confirm("Delete?");
       if (q === true) {
         deleteApiArticlesComment(comment_id)
           .then(() => {
-          window.alert("comment deleted")
-        })
-        .catch((error) => {
-        });
+            window.alert("comment deleted");
+          })
+          .catch((error) => {});
       } else {
         window.alert("delete cancelled");
       }
     } else {
-      window.alert("permission denied")
+      window.alert("permission denied");
     }
   };
 
