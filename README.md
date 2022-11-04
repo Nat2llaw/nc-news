@@ -1,8 +1,8 @@
 # NC-News
 
-[Live Site](https://github.com/Nat2llaw/Backend-News-Project.git)
+[Live Site](https://636524cb6ac0e2092b5cd488--natnews.netlify.app/articles/sortby/created_at/order/desc)
 
-Backend
+[Backend](https://github.com/Nat2llaw/Backend-News-Project.git)
 
 ## Description
 
