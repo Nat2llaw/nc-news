@@ -4,17 +4,20 @@ import "./TopicArticles.css";
 const TopicArticles = ({ article }) => {
   return (
     <div className="articleContainer">
-      <p className="title" key={article.title}>
+      <p className="title" key={article.article_id}>
         {article.title}
       </p>
+      <p className="date">{new Date(article.created_at).toString()}</p>
       <p className="topic" key={article.topic}>
         Topic: {article.topic}
       </p>
-      <p>
-        <Link className="id" to={`/articles/${article.article_id}`}>
-          Click to read more!!
-        </Link>
-      </p>
+      <Link className="id" to={`/articles/${article.article_id}`}>
+        Read full article!!
+      </Link>
+      <div className="vc">
+        <p className="votes">Votes: {article.votes}</p>
+        <p className="comments">Comments: {article.comment_count}</p>
+      </div>
     </div>
   );
 };

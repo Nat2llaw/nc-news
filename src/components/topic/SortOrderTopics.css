@@ -27,7 +27,7 @@
 }
 .allArticles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .articleContainer {
@@ -72,12 +72,12 @@ h3 {
 /*============= MEDIA QUERIES ================*/
 @media screen and (max-width: 1024px) {
     .allArticles {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 600px) {
     .allArticles {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }

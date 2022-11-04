@@ -49,6 +49,10 @@
   justify-self: center;
   margin: 5px 5px 5px 5px;
 }
+.vc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 p {
   margin: 5px 5px 5px 5px;
 }
