@@ -1,6 +1,6 @@
 # NC-News
 
-[Live Site](https://636524cb6ac0e2092b5cd488--natnews.netlify.app/articles/sortby/created_at/order/desc)
+[Live Site](natnews.netlify.app)
 
 [Backend](https://github.com/Nat2llaw/Backend-News-Project.git)
 
