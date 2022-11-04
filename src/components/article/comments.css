@@ -1,8 +1,15 @@
+.addcommentContainer {
+  margin: 5px 20px;
+}
+.commentBox {
+  border-radius: 50px;
+}
 .commentContainer {
   display: grid;
-  border: red solid;
+  border: solid rgb(247, 247, 247);
   border-radius: 10px;
-  margin: 5px 5px 5px 5px;
+  margin: 5px 20px;
+  box-shadow: 5px 5px 5px rgb(245, 245, 245);
 }
 .author {
   font-size: 20px;
@@ -12,7 +19,7 @@
 .info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 5px 10px 5px 10px;
+  margin: 5px 10px;
 }
 .article_id {
   text-align: center;
