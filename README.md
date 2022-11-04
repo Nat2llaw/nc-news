@@ -4,6 +4,10 @@
 
 [Backend](https://github.com/Nat2llaw/Backend-News-Project.git)
 
+## Netlify status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5440ce69-94ce-47a8-90fb-92f42bfddfe6/deploy-status)](https://app.netlify.com/sites/natnews/deploys)
+
 ## Description
 
 NC News is a full stack project made with Nodejs, Expressjs, Reactjs, and PostgreSQL.
