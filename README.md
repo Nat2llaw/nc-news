@@ -1,14 +1,14 @@
 # NC-News
 
-[Live Site](https://github.com/Nat2llaw/Backend-News-Project.git)
+[Live Site](natnews.netlify.app)
 
-Backend
+[Backend](https://github.com/Nat2llaw/Backend-News-Project.git)
 
 ## Description
 
 NC News is a full stack project made with Nodejs, Expressjs, Reactjs, and PostgreSQL.
 
-It is a mobile-friendly and responsive news app that allows users to see articles and sort them with filters. The individual articles can also be liked and commented on by users who have logged in.
+It is a mobile-friendly responsive news app that allows users to see articles and sort them with filters. The individual articles can also be liked and commented on by users who have logged in.
 
 ## Local Development Setup
 
