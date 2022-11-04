@@ -27,14 +27,15 @@
 }
 .allArticles {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .articleContainer {
   display: grid;
   width: auto;
-  border: solid red;
+  border: solid rgb(247, 247, 247);
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(245, 245, 245);
   margin: 5px 5px 5px 5px;
   text-align: center;
 }
@@ -66,4 +67,17 @@ h3 {
 .commentsLink {
   text-align: center;
   justify-self: center;
+}
+
+/*============= MEDIA QUERIES ================*/
+@media screen and (max-width: 1024px) {
+    .allArticles {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .allArticles {
+        grid-template-columns: 1fr 1fr;
+    }
 }

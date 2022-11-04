@@ -25,16 +25,12 @@
   justify-content: center;
   align-items: center;
 }
-.allArticles {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
 .articleContainer {
   display: grid;
   width: auto;
-  border: solid red;
+  border: solid rgb(247, 247, 247);
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(245, 245, 245);
   margin: 5px 5px 5px 5px;
   text-align: center;
 }
@@ -51,6 +47,7 @@
 .id {
   color: blue;
   justify-self: center;
+  margin: 5px 5px 5px 5px;
 }
 p {
   margin: 5px 5px 5px 5px;

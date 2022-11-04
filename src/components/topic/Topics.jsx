@@ -2,8 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { fetchApiArticlesByTopics } from "../../utils/Api";
-import TopicArticles from "./TopicArticles";
-import SearchTopics from "./SearchTopics";
 import SortOrderTopics from "./SortOrderTopics";
 
 const Topics = () => {
@@ -30,16 +28,8 @@ const Topics = () => {
   } else {
     return (
       <div>
-        <div className="searchtopics">
-          <SearchTopics />
-        </div>
         <h2>Selected Topic: {selectedtopic}</h2>
         <SortOrderTopics topic={selectedtopic} />
-        <div className="allArticlesByTopic">
-          {articles.map((article) => {
-            return <TopicArticles article={article} key={article.article_id} />;
-          })}
-        </div>
       </div>
     );
   }

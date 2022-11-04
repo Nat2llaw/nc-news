@@ -4,7 +4,6 @@ import { fetchApiSortedArticles } from "../../utils/Api";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import "./articles.css";
-import SearchTopics from "../topic/SearchTopics";
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
@@ -40,9 +39,6 @@ const Articles = () => {
     } else {
       return (
         <div>
-          <div className="searchtopics">
-            <SearchTopics />
-          </div>
           <div className="filterArticles">
             <form className="sort" onSubmit={handleQueries}>
               <fieldset>
