@@ -1,6 +1,6 @@
 # NC-News
 
-Live Site
+[Live Site](https://github.com/Nat2llaw/Backend-News-Project.git)
 
 Backend
 
