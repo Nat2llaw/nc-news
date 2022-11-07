@@ -5,6 +5,7 @@ const ArticleCard = ({ article }) => {
   return (
     <>
       <div className="articleContainer">
+        <img  src={article.img_URL}className="articleImg" alt={article.title} />
         <p className="title" key={article.article_id}>
           {article.title}
         </p>
@@ -15,7 +16,7 @@ const ArticleCard = ({ article }) => {
         <Link className="id" to={`/articles/${article.article_id}`}>
           Read full article!!
         </Link>
-        <div className='vc'>
+        <div className="vc">
           <p className="votes">Votes: {article.votes}</p>
           <p className="comments">Comments: {article.comment_count}</p>
         </div>

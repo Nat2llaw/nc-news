@@ -4,6 +4,7 @@ import "./TopicArticles.css";
 const TopicArticles = ({ article }) => {
   return (
     <div className="articleContainer">
+      <img className="articleImg" src={article.img_url} alt={article.title} />
       <p className="title" key={article.article_id}>
         {article.title}
       </p>

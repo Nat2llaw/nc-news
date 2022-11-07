@@ -31,6 +31,7 @@ const SingleArticle = () => {
   } else {
     return (
       <div className="singlearticleContainer">
+        <img className="articleImg" src={article.img_url} alt={article.title} />
         <h2 className="articleTitle">{article.title}</h2>
         <div className="baseInfo">
           <h3 className="articleAuthor">Author: {article.author}</h3>

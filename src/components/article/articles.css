@@ -28,7 +28,7 @@
 .articleContainer {
   display: grid;
   width: auto;
-  border: solid rgb(247, 247, 247);
+  border: solid rgb(240, 247, 247);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(245, 245, 245);
   margin: 5px 5px 5px 5px;
