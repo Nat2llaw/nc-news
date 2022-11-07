@@ -8,7 +8,7 @@ const TopicArticles = ({ article }) => {
       <p className="title" key={article.article_id}>
         {article.title}
       </p>
-      <p className="date">{new Date(article.created_at).toString()}</p>
+      <p className="date">{new Date(article.created_at).toLocaleString()}</p>
       <p className="topic" key={article.topic}>
         Topic: {article.topic}
       </p>

@@ -36,7 +36,7 @@ const SingleArticle = () => {
         <div className="baseInfo">
           <h3 className="articleAuthor">Author: {article.author}</h3>
           <h3 className="articleDate">
-            {new Date(article.created_at).toString()}
+            {new Date(article.created_at).toLocaleString()}
           </h3>
           <h3 className="articleTopic">Topic: {article.topic}</h3>
         </div>
