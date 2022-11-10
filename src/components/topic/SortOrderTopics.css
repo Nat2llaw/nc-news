@@ -69,6 +69,8 @@ h3 {
   justify-self: center;
 }
 .articleImg {
+  border: transparent medium;
+  border-radius: 10px;
   width: 100%;
   height: 300px
 }
