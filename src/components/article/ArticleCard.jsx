@@ -5,7 +5,7 @@ const ArticleCard = ({ article }) => {
   return (
     <>
       <div className="articleContainer">
-        <img src={article.img_URL} className="articleImg" alt={article.title} />
+        <img src={article.img_url} className="articleImg" alt={article.title} />
         <p className="title" key={article.article_id}>
           {article.title}
         </p>
